@@ -11,6 +11,11 @@ int sensorMax[8];
 int sensorThreshold[8];
 bool isCalibrated = false;
 
+void saveCalibration();
+bool loadCalibration();
+void clearCalibration();
+void printCalibrationData();
+
 // Preferences for persistent storage
 Preferences preferences;
 
@@ -74,9 +79,6 @@ void calibrate(unsigned long duration = 5000) {
     for (int i = 0; i < NUM_SENSORS; i++) {
         sensorThreshold[i] = (sensorMin[i] + sensorMax[i]) / 2;
     }
-    
-    // Print calibration results
-    printCalibrationData();
     
     isCalibrated = true;
     

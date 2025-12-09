@@ -22,6 +22,8 @@ int baseSpeed = 150;         // Default base speed (0-255)
 int motorASpeed = 0;
 int motorBSpeed = 0;
 
+void stopMotors();
+
 // Initialize motor control pins and PWM
 void initMotors() {
     // Configure direction control pins as outputs
